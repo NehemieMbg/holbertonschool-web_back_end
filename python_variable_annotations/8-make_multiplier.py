@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Import"""
+"""8-make_multiplier.py"""
+
 from typing import Callable
-"""Multiply floats"""
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
-    def multiply(value: float) -> float:
-        """takes a float argument and returns the result"""
-        return value * multiplier
-    """Returns a function that multiplies a float"""
-    return multiply
+    """make_multiplier function"""
+    def reterned_function(number: float) -> float:
+        """reterned_function function"""
+        return number * multiplier
+    return reterned_function

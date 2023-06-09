@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""import"""
-from typing import List, Tuple
-"""return values with the appropriate types"""
+"""
+9-element_length.py
+"""
+
+from typing import Iterable, Sequence, Tuple, List
 
 
-def element_length(lst: List[str]) -> List[Tuple[str, int]]:
-    """return"""
-    return [(i, len(i)) for i in lst]
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """element_length: takes a list lst of iterables and returns a tuple."""
+    return (lst, len(lst))
