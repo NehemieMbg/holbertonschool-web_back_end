@@ -1,10 +1,6 @@
-export default function appendToEachArrayValue(
-  array,
-  appendString = 'correctly-'
-) {
+export default function appendToEachArrayValue(array, appendString) {
   for (let value of array) {
-    const string = `${appendString}${value}`;
-    value = string;
+    value = appendString + value;
   }
 
   return array;
