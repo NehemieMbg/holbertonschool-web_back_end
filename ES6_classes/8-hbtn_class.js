@@ -12,5 +12,7 @@ export default class HolbertonClass {
     if (value === 'string') {
       return this._location;
     }
+
+    return null;
   }
 }
