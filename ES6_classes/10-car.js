@@ -6,6 +6,10 @@ export default class Car {
   }
 
   cloneCar() {
-    return new Car();
+    return Object.assign(Object.create(Object.getPrototypeOf(this)), {
+      _brand: undefined,
+      _motor: undefined,
+      _color: undefined,
+    });
   }
 }
