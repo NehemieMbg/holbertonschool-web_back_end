@@ -14,7 +14,7 @@ export class HolbertonClass {
 }
 
 export class StudentHolberton {
-  constructor(firstName, lastName, newClass = new HolbertonClass()) {
+  constructor(firstName, lastName, newClass) {
     this._firstName = firstName;
     this._lastName = lastName;
     this._holbertonClass = newClass;
