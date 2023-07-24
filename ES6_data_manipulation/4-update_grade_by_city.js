@@ -22,7 +22,7 @@ export default function updateStudentGradeByCity(
         // Past the onject and adds the new grade to the current object
         return {
           ...student,
-          grade: currGrade.grade || 'N/A',
+          grade: currGrade?.grade || 'N/A',
         };
       })
   );
