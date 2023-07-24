@@ -14,7 +14,9 @@ export default function updateStudentGradeByCity(
     .map((student) => {
       // Find the grade object that has the same id as the student
       const currGrade = newGrades.find((grade) => {
-        if (student.id === grade.studentId) return grade.grade;
+        if (student.id === grade.studentId) {
+          return grade.grade;
+        }
       });
       // Past the onject and adds the new grade to the current object
       return {
