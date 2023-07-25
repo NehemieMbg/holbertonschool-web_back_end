@@ -1,5 +1,5 @@
 // Display the message
-process.stdout.write('Welcome to holberton School, what is your name?\n');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 // Set the encoding of the standard input to UTF-8
 process.stdin.setEncoding('utf8');
