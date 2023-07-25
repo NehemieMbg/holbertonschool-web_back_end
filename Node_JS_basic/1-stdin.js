@@ -1,11 +1,11 @@
-module.exprts = function askQuestion(question) {
+function askQuestion(question) {
   process.stdout.write(question);
   return new Promise((resolve) => {
     process.stdin.once('data', (data) => {
       resolve(data.toString().trim());
     });
   });
-};
+}
 
 async function main() {
   const name = await askQuestion(
