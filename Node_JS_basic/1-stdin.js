@@ -1,32 +1,20 @@
-// module to read user input from the command line
-const readline = require('readline');
-
-// Create interface to read user input
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-/**
- * Function that Read the user input from the command line
- * @param question - the question to be answered
- * @returns a promise that will be resolved when the user input is read
- */
-function userResponse(question) {
-  return new Promise((resolve, reject) => {
-    rl.question(question, (answer) => {
-      resolve(answer);
+function askQuestion(question) {
+  process.stdout.write(question);
+  return new Promise((resolve) => {
+    process.stdin.once('data', (data) => {
+      resolve(data.toString().trim());
     });
   });
 }
 
 async function main() {
-  const name = await userResponse(
+  const name = await askQuestion(
     'Welcome to Holberton School, what is your name?\n'
   );
   console.log(`Your name is: ${name}`);
-  console.log('This is important software is now closing');
-  rl.close();
+  console.log('This important software is now closing');
+
+  process.exit();
 }
 
 main();
