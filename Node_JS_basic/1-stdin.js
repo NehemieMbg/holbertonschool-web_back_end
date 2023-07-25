@@ -1,26 +1,20 @@
-function askQuestion(question) {
-  process.stdout.write(question);
-  return new Promise((resolve) => {
-    process.stdin.once('data', (data) => {
-      resolve(data.toString().trim());
-    });
-  });
-}
+// Display the message
+process.stdout.write('Welcome to holberton School, what is your name?\n');
 
-async function main() {
-  const name = await askQuestion(
-    'Welcome to Holberton School, what is your name?\n'
-  );
-  console.log(`Your name is: ${name}`);
+// Set the encoding of the standard input to UTF-8
+process.stdin.setEncoding('utf8');
 
-  // Event listener for the 'end' event
-  process.stdin.on('end', () => {
-    console.log('This important software is now closing');
-    process.exit(0);
-  });
+// Listen for 'readable' event
+process.stdin.on('readable', () => {
+  const name = process.stdin.read();
 
-  // Listend for the 'end' event on stdin
-  process.stdin.resume();
-}
+  if (name) process.stdout.write(`Your name is: ${name}`);
+});
 
-main();
+// Event listener for the 'end' event
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
+  process.exit(0);
+});
+
+process.stdin.resume();
