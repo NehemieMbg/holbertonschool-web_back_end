@@ -21,10 +21,10 @@ module.exports = async function countStudents(path) {
     // Prints the number of students
     console.log(`Number of students: ${studentData.length}`);
     console.log(
-      `Number of students in FIELD: ${CS.length}. List: ${CS.join(', ')}`
+      `Number of students in CS: ${CS.length}. List: ${CS.join(', ')}`
     );
     console.log(
-      `Number of students in FIELD: ${SWE.length}. List: ${SWE.join(', ')}`
+      `Number of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`
     );
   } catch (error) {
     throw new Error('Cannot load the database');
