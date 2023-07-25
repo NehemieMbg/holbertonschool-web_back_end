@@ -12,9 +12,15 @@ async function main() {
     'Welcome to Holberton School, what is your name?\n'
   );
   console.log(`Your name is: ${name}`);
-  console.log('This important software is now closing');
 
-  process.exit();
+  // Event listener for the 'end' event
+  process.stdin.on('end', () => {
+    console.log('This important software is now closing');
+    process.exit(0);
+  });
+
+  // Listend for the 'end' event on stdin
+  process.stdin.resume();
 }
 
 main();
