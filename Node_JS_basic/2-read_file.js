@@ -26,12 +26,12 @@ module.exports = function countStudents(path) {
 
     console.log(`Number of students: ${dataArrObj.length}`);
     console.log(
-      `Number of students in FIELD: ${fieldCS.length}. List:  ${fieldCS.join(
+      `Number of students in FIELD: ${fieldCS.length}. List: ${fieldCS.join(
         ', '
       )}`
     );
     console.log(
-      `Number of students in FIELD: ${fieldSWE.length}. List:  ${fieldSWE.join(
+      `Number of students in FIELD: ${fieldSWE.length}. List: ${fieldSWE.join(
         ', '
       )}`
     );
