@@ -14,10 +14,10 @@ app.get('/', (req, res) => {
 
 app.get('/students', async (req, res) => {
   try {
-    res.write('This is the list of our students');
-    res.end(await countStudent(path));
+    res.send(await countStudent(path));
   } catch (error) {
-    res.end('Cannot load the database');
+    console.error('Error fetching students: ', error);
+    res.status(500).send('Internal Server Error');
   }
 });
 
