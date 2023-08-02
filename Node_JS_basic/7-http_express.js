@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 
 app.get('/students', async (req, res) => {
   try {
-    res.send(await countStudent(path));
+    const data = await countStudent(path);
+    res.send(`This is the list of our students\n${data}`);
     res.end();
   } catch (error) {
     console.error('Error fetching students: ', error);
