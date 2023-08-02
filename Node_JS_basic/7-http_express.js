@@ -13,8 +13,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const studentsList = await countStudent(path);
-  res.send(studentsList);
+  try {
+    res.write('This is the list of our students');
+    res.end(await countStudent(path));
+  } catch (error) {
+    res.end('Cannot load the database');
+  }
 });
 
 app.listen(port);
