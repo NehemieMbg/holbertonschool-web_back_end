@@ -13,9 +13,10 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   try {
     res.send(await countStudent(path));
+    res.end();
   } catch (error) {
     console.error('Error fetching students: ', error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).end('Internal Server Error');
   }
 });
 
