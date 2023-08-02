@@ -6,8 +6,6 @@ const port = 1245;
 
 const path = process.argv[2];
 
-console.log(path);
-
 app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
