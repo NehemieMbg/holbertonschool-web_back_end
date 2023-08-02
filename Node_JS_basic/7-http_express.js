@@ -16,8 +16,8 @@ app.get('/students', async (req, res) => {
     res.send(`This is the list of our students\n${data}`);
     res.end();
   } catch (error) {
-    console.error('Error fetching students: ', error);
-    res.status(500).end('Internal Server Error');
+    res.send('This is the list of our students\nCannot load the database');
+    res.status(500).end();
   }
 });
 
