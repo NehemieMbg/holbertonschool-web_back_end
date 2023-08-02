@@ -1,5 +1,3 @@
-function calculateNumber(a, b) {
-  return Math.ceil(a) + Math.round(b);
-}
-
-module.exports = calculateNumber;
+module.exports = function calculateNumber(a, b) {
+  return Math.round(a) + Math.round(b);
+};
