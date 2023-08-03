@@ -89,4 +89,13 @@ describe('calculateNumber', () => {
       );
     });
   });
+
+  describe('invalid operation type', () => {
+    it('should throw error if type is invalid', () => {
+      assert.throws(() => calculateNumber(INVALID, 5.7, 4.6), {
+        message:
+          'Invalid operation type. Valid types are "SUM", "SUBTRACT", and "DIVIDE".',
+      });
+    });
+  });
 });
